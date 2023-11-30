@@ -28,7 +28,7 @@ function Home() {
     paddingBottom: "400px",
   };
 
-  const initialText = "Games for your ENTERTAINMENT...";
+  const initialText = "Games you wanna play";
   const [displayText, setDisplayText] = useState("");
   const [cursorVisible, setCursorVisible] = useState(true);
 
@@ -37,10 +37,10 @@ function Home() {
       for (let i = 0; i <= initialText.length; i++) {
         setTimeout(() => {
           setDisplayText(initialText.slice(0, i));
-        }, i * 100); // Adjust the speed by changing the multiplier
+        }, i * 100); 
       }
 
-      // Show cursor after the typing is complete
+      
       setTimeout(() => {
         setCursorVisible(true);
       }, initialText.length * 100);
