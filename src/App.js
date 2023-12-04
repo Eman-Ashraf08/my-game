@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ButtonAppBar from './Homebar/navbar'
 import Home from './Homebar/home'
-import SpinTheWheel from './1st-game/spinTheWheel'
-import CustomScratchCard from './3rd-game/scratchCard'
-import HotSlotGame from './2nd-game/hotSlot'
+import SpinTheWheel from './game-one/spinTheWheel'
+import CustomScratchCard from './game-three/scratchCard'
+import HotSlotGame from './game-two/hotSlot'
 function App() {
   return (
    <Router>
