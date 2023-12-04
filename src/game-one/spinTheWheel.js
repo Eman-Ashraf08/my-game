@@ -1,7 +1,7 @@
 import WheelComponent from "react-wheel-of-prizes";
 
 
-export default function SpinTheWheel() {
+function SpinTheWheel() {
   const segments = [
     "Iphone",
     "Laptop",
@@ -67,3 +67,4 @@ export default function SpinTheWheel() {
     </div>
   );
 }
+export default SpinTheWheel
