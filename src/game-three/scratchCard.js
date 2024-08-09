@@ -15,39 +15,40 @@ function CustomScratchCard() {
     onComplete: () => console.log('The card is now clear!'),
   };
 
-  const cardContainerStyle = {
+  const containerStyle = {
     display: 'flex',
-    justifyContent: 'center',
-    marginBottom: '20px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '20px',
+  };
+
+  const gridContainerStyle = {
+    display: 'grid',
+    gap: '20px',
+    width: '100%',
+    maxWidth: '1200px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
   };
 
   const cardStyle = {
-    display: 'inline-block',
-    margin: '10px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px',
   };
 
-  // Generate content for each card once
-  const cards = [...Array(6)].map(() => generateRandomContent());
+  // Generate content for 8 cards
+  const cards = [...Array(8)].map(() => generateRandomContent());
 
   return (
-    <div>
-      <h1 style={{ textAlign: 'center', color: 'red' }}>Scratch the Cards</h1>
+    <div style={containerStyle}>
+      <h1 style={{ textAlign: 'center', color: 'red', marginBottom: '20px' }}>Scratch the Cards</h1>
 
-      <div style={cardContainerStyle}>
-        {cards.slice(0, 3).map((card, index) => (
+      <div style={gridContainerStyle}>
+        {cards.map((card, index) => (
           <div style={cardStyle} key={index}>
             <ScratchCardComponent {...settings}>
-              <h1 style={{ textAlign: 'center', color: card.color }}>{card.content}</h1>
-            </ScratchCardComponent>
-          </div>
-        ))}
-      </div>
-
-      <div style={cardContainerStyle}>
-        {cards.slice(3).map((card, index) => (
-          <div style={cardStyle} key={index + 3}>
-            <ScratchCardComponent {...settings}>
-              <h1 style={{ textAlign: 'center', color: card.color }}>{card.content}</h1>
+              <h1 style={{ textAlign: 'center', color: card.color, fontSize: '1.5rem' }}>{card.content}</h1>
             </ScratchCardComponent>
           </div>
         ))}
